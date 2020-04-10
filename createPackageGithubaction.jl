@@ -1,6 +1,6 @@
 using PkgTemplates
 
-DirPath="~/.julia/dev"
+DirPath=joinpath(ENV["HOME"],".julia/dev")
 PackageName="githubactions4julia.jl"
 user="wakakusa"
 cd(DirPath)
@@ -24,10 +24,10 @@ t(PackageName)
 
 
 using DocumenterTools
-using MyPackage
+using githubactions4julia
 
-repo=string("git@github.com:",user,"/",splitdir(PackageName),".git")
-Travis.genkeys(user=user, repo=repo)
+repo=string("git@github.com:",user,"/",PackageName,".git")
+DocumenterTools.genkeys(;user=user, repo=repo)
 
 
 ## ドキュメントローカル作成
