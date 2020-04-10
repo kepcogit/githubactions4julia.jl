@@ -27,6 +27,7 @@ using DocumenterTools
 using githubactions4julia
 
 repo=string("git@github.com:",user,"/",PackageName,".git")
+# 鍵が２つ出力されるので見落とさないこと
 DocumenterTools.genkeys(;user=user, repo=repo)
 
 
