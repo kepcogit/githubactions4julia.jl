@@ -31,6 +31,6 @@ repo=string("git@github.com:",user,"/",PackageName,".git")
 DocumenterTools.genkeys(;user=user, repo=repo)
 
 
-## ドキュメントローカル作成
+# ドキュメントローカル作成
 cd $DirPath/$PackageName
 julia --project=docs -e 'using Pkg;Pkg.develop(PackageSpec(path=pwd()));Pkg.instantiate();include("docs/make.jl");'
